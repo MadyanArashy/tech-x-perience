@@ -5,7 +5,7 @@ import { useThemeColor } from '@/hooks/useThemeColor';
 export type ThemedTextProps = TextProps & {
   lightColor?: string;
   darkColor?: string;
-  type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link';
+  type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link' | 'extrasmall' | 'defaultTwo' | 'extrasmallTwo' | 'ultrasmall' | 'ultrasmallTwo';
 };
 
 export function ThemedText({
@@ -22,6 +22,11 @@ export function ThemedText({
       style={[
         { color },
         type === 'default' ? styles.default : undefined,
+        type === 'defaultTwo' ? styles.defaultTwo : undefined,
+        type === 'extrasmall' ? styles.extrasmall : undefined,
+        type === 'extrasmallTwo' ? styles.extrasmallTwo : undefined,
+        type === 'ultrasmall' ? styles.ultrasmall : undefined,
+        type === 'ultrasmallTwo' ? styles.ultrasmallTwo : undefined,
         type === 'title' ? styles.title : undefined,
         type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
         type === 'subtitle' ? styles.subtitle : undefined,
@@ -35,11 +40,34 @@ export function ThemedText({
 
 const styles = StyleSheet.create({
   default: {
-    fontSize: 16,
+    fontSize: 15,
     lineHeight: 24,
   },
+  defaultTwo: {
+    fontSize: 15,
+    lineHeight: 24,
+    color: '#646464',
+  },
+  extrasmall: {
+    fontSize: 13,
+    lineHeight: 24,
+  },
+  extrasmallTwo: {
+    fontSize: 13,
+    lineHeight: 24,
+    color: '#646464',
+  },
+  ultrasmall: {
+    fontSize: 11,
+    lineHeight: 24,
+  },
+  ultrasmallTwo: {
+    fontSize: 11,
+    lineHeight: 24,
+    color: '#646464',
+  },
   defaultSemiBold: {
-    fontSize: 16,
+    fontSize: 15,
     lineHeight: 24,
     fontWeight: '600',
   },
@@ -49,12 +77,12 @@ const styles = StyleSheet.create({
     lineHeight: 32,
   },
   subtitle: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: 'bold',
   },
   link: {
     lineHeight: 30,
-    fontSize: 16,
+    fontSize: 15,
     color: '#0a7ea4',
   },
 });

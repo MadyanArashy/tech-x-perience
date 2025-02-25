@@ -1,0 +1,50 @@
+import { useRouter } from 'expo-router';
+import React, { ReactNode } from 'react';
+import { StyleProp, StyleSheet, Text, TextStyle, TouchableOpacity, View, ViewStyle } from 'react-native';
+
+import { useThemeColor } from '@/hooks/useThemeColor';
+import tw from 'twrnc';
+import { ThemedText } from './ThemedText';
+
+type ThemedButtonProps = {
+  route?: any;
+  bgLightColor?: string;
+  bgDarkColor?: string;
+  style?: StyleProp<ViewStyle>;
+  inline?: boolean;
+  transparent?: boolean;
+  children: ReactNode;
+  onPress?: () => void;
+}
+
+const ThemedButton = ({bgLightColor = 'transparent', bgDarkColor = 'transparent', style, inline, route, transparent, children, onPress}: ThemedButtonProps) => {
+
+  const bgColor = useThemeColor({ light: bgLightColor, dark: bgDarkColor }, 'text');
+  const router = useRouter();
+  let buttonContent = route && !onPress ? (
+    <TouchableOpacity style={[tw`rounded-xl`]} onPress={() => router.push(route)}>
+      <View style={[tw`rounded-lg py-3 bg-[${transparent ? 'transparent' : bgColor}] ${transparent ? 'border' : ''} border-[${transparent ? bgColor : 'none'}]`, style]}>
+        {children}
+      </View>
+    </TouchableOpacity>
+  ) : 
+  <TouchableOpacity style={[tw`rounded-xl`]} onPress={onPress}>
+    <View style={[tw`rounded-lg py-3 bg-[${transparent ? 'transparent' : bgColor}] ${transparent ? 'border' : ''} border-[${transparent ? bgColor : 'none'}]`, style]}>
+      {children}
+    </View>
+  </TouchableOpacity>
+  return inline ? (
+    <Text style={tw`text-center`}>{buttonContent}</Text>
+  ) : (
+    buttonContent
+  )
+}
+const styles = StyleSheet.create({
+  default: {
+    fontSize: 22,
+    lineHeight: 24,
+  },
+})
+
+export { ThemedButton };
+
