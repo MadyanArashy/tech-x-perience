@@ -11,6 +11,7 @@ import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { SimpleLineIcons, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import Card from '@/components/Card';
+import FilterImages from '@/components/FilterImages';
 
 
 export default function HomeScreen() {
@@ -78,7 +79,7 @@ export default function HomeScreen() {
             icon={<Ionicons name='chatbubbles-outline' size={18} color={colors.default} style={tw`rounded-full bg-[${colors.background}] h-7 w-7 pt-1 pl-1.2`}/>}/>    
           </View>
 
-          <View>
+          <View style={tw`mb-5`}>
             <View style={tw`flex-row justify-between mb-1`}>
               <ThemedText type='defaultSemiBold'>📖 Mau belajar apa ni</ThemedText>
               <ThemedText>Lihat semua</ThemedText>
@@ -88,6 +89,14 @@ export default function HomeScreen() {
             </View>
           </View>
 
+          <View style={tw`mb-5`}>
+            <View style={tw`flex-row justify-between mb-1`}>
+              <ThemedText type='defaultSemiBold'>🗓️ Ikuti event terdekat</ThemedText>
+              <ThemedText>Lihat semua</ThemedText>
+            </View>
+            <FilterImages/>
+          </View>
+              
         </ScrollView>
       </SafeAreaView>
     </ThemedView>
