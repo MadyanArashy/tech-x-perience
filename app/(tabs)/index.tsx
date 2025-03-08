@@ -16,26 +16,51 @@ import Card from '@/components/Card';
 export default function HomeScreen() {
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme ?? 'light'];
+
+  const bannerImages = [
+    require('@/assets/images/hackathon-ganjar.png'),
+    require('@/assets/images/hackathon-ganjar.png'),
+    require('@/assets/images/saas-cloud.jpg')
+  ]
+
+  const cardData = [
+    {
+      "image": require('@/assets/images/dkv-gambar.jpg'),
+      "title": "Fundamental Belajar Design",
+      "desc": "Belajar desain itu gak langsung gambar aja, ada dasarnya, belajar disini"
+    },
+    {
+      "image": require('@/assets/images/ingpokan.jpg'),
+      "title": "Tingkatkan Skill Database MySQL",
+      "desc": "Belajar database tinggal gini aja, coba buka pelajaran disini"
+    },
+    {
+      "image": require('@/assets/images/saas-cloud.jpg'),
+      "title": "Fundamental Belajar Jaringan",
+      "desc": "Belajar jaringan lebih dari cuman kabel, belajar disini"
+    },
+    {
+      "image": require('@/assets/images/uiux-explained.png'),
+      "title": "Mahir Menjadi Frontend",
+      "desc": "masuk ke spesialistnya menjadi frontend dev"
+    },
+  ]
   
   return (
     <ThemedView darkColor='#151515' lightColor='white' style={tw`flex-1 px-4`}>
       <SafeAreaView style={tw`flex-1`}>
-        <ScrollView contentContainerStyle={tw`pt-4`}>
+        <ScrollView contentContainerStyle={tw`pt-4`} showsVerticalScrollIndicator={false}>
           <Header />
 
           <ScrollView
             horizontal
             style={tw`w-full my-3`}
             contentContainerStyle={tw`flex-row gap-5`}>
-            <View style={tw`rounded-xl border border-[${colors.default}] w-80`}>
-              <Image source={require('@/assets/images/hackathon-ganjar.png')} style={tw`w-full h-50 rounded-xl`}/>
-            </View>
-            <View style={tw`rounded-xl border border-[${colors.default}] w-80`}>
-              <Image source={require('@/assets/images/hackathon-ganjar.png')} style={tw`w-full h-50 rounded-xl`}/>
-            </View>
-            <View style={tw`rounded-xl border border-[${colors.default}] w-80`}>
-              <Image source={require('@/assets/images/hackathon-ganjar.png')} style={tw`w-full h-50 rounded-xl`}/>
-            </View>
+              {bannerImages.map((item, key) => (
+                <View key={key} style={tw`rounded-xl border border-[${colors.default}] w-80`}>
+                  <Image source={item} style={tw`w-full h-50 rounded-xl`}/>
+                </View>
+              ))}
           </ScrollView>
           
           <View style={tw`flex-row justify-between flex-wrap mb-5`}>
@@ -59,9 +84,7 @@ export default function HomeScreen() {
               <ThemedText>Lihat semua</ThemedText>
             </View>
             <View style={tw`flex-row justify-between flex-wrap`}>
-              <Card />
-              <Card />
-              <Card />
+              {cardData.map((item, key) => (<Card key={key} image={item.image} title={item.title} desc={item.desc} />))}
             </View>
           </View>
 

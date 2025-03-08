@@ -28,8 +28,8 @@ const login = () => {
               {logoImage}
             </ThemedView>
               <View style={tw`flex-col gap-4 mb-4`}>
-                  <TextInput style={tw`border-2 border-[${colors.secondary}] rounded-xl bg-[${colors.background}] pl-4 text-white`} autoComplete='email' textContentType='emailAddress' placeholder='Masukkan Email' placeholderTextColor={'grey'} selectionColor={'white'}/>
-                  <TextInput style={tw`border-2 border-[${colors.secondary}] rounded-xl bg-[${colors.background}] pl-4 text-white`} autoComplete='current-password' secureTextEntry placeholder='Masukkan Password' placeholderTextColor={'grey'} selectionColor={'white'}/>
+              <TextInput style={tw`border-2 border-[${colors.secondary}] rounded-xl bg-[${colors.background}] pl-4 text-[${colors.text}]`} autoComplete='email' placeholder='Masukkan Email' placeholderTextColor={colors.icon} selectionColor={colors.default}/>
+              <TextInput style={tw`border-2 border-[${colors.secondary}] rounded-xl bg-[${colors.background}] pl-4 text-[${colors.text}]`} autoComplete='current-password' secureTextEntry placeholder='Masukkan Password' placeholderTextColor={colors.icon} selectionColor={colors.default}/>
               </View>
               <View style={tw`flex-row items-center justify-between mb-6`}>
                 <View style={tw`flex-row items-center gap-2`}>
