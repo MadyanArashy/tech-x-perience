@@ -21,13 +21,13 @@ const index = () => {
           Belajar di TechXperience, kamu dapat belajar berbagai bidang teknologi seperti pemrograman, desain grafis, dan jaringan.
         </ThemedText>
       </SafeAreaView>
-      <View style={tw`flex-col bottom-10 gap-2 absolute left-1/15 transform -translate-x-1/2 -translate-y-1/2`}>
-        <ThemedButton route={'/auth/survey'} bgLightColor='black' bgDarkColor='white' transparent>
+      <View style={tw`flex-col bottom-10 gap-2 absolute left-1/15`}>
+        <ThemedButton route={'/auth/survey'} LightColor='black' DarkColor='white' transparent>
           <ThemedText style={tw`text-center`}>
             Mulai Belajar Sekarang
           </ThemedText>
         </ThemedButton>
-        <ThemedButton route={'/auth/login'} bgLightColor='#4285f4' bgDarkColor='#4285f4'>
+        <ThemedButton route={'/auth/login'} LightColor='#4285f4' DarkColor='#4285f4'>
           <ThemedText style={tw`text-center`}>
             Masuk
           </ThemedText>

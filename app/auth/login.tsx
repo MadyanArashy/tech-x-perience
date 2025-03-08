@@ -44,7 +44,7 @@ const login = () => {
                 Lupa Password?
               </ThemedText>
             </View>
-            <ThemedButton route={'/auth/survey'} bgDarkColor='#0086ff' bgLightColor='#0086ff'>
+            <ThemedButton route={'/auth/survey'} DarkColor='#0086ff' LightColor='#0086ff'>
               <ThemedText style={tw`text-center`}>
                 Masuk
               </ThemedText>
@@ -58,7 +58,7 @@ const login = () => {
                   Atau mau masuk melalui
                 </ThemedText>
               </View>
-              <ThemedButton route={'/(tabs)'} bgLightColor='#151515' bgDarkColor='white'>
+              <ThemedButton route={'/(tabs)'} LightColor='#151515' DarkColor='white'>
                 <View style={tw`ml-18 flex-row gap-4 items-center`}>
                   <Ionicons name='logo-google' size={28} color={iconColor}/>
                   <ThemedText style={tw`text-center`} darkColor='black' lightColor='white'>
@@ -66,7 +66,7 @@ const login = () => {
                   </ThemedText>
                 </View>
               </ThemedButton>
-              <ThemedButton route={'/(tabs)'} bgLightColor='#151515' bgDarkColor='white'>
+              <ThemedButton route={'/(tabs)'} LightColor='#151515' DarkColor='white'>
                 <View style={tw`ml-18 flex-row gap-4 items-center`}>
                   <AntDesign name='facebook-square' size={28} color={iconColor}/>
                   <ThemedText style={tw`text-center`} darkColor='black' lightColor='white'>

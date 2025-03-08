@@ -24,8 +24,8 @@ const survey = () => {
         </ThemedText>
         {
           selectionData.map((item, key) => (
-          <ThemedView key={key} style={tw`${radio === (key + 1) ? 'border-2' : ''} ${radio === (key + 1) ? 'border-yellow-500' : ''} rounded-lg`}>
-            <ThemedButton bgLightColor='#efefef' bgDarkColor='#292929' style={tw`flex-row justify-between px-4 items-center`} onPress={() => {setRadio(key + 1)}}>
+          <ThemedView key={key} style={tw`${radio === (key + 1) ? 'border-2' : ''} ${radio === (key + 1) ? 'border-neutral-500' : ''} rounded-lg`}>
+            <ThemedButton LightColor='#efefef' DarkColor='#292929' style={tw`flex-row justify-between px-4 items-center`} onPress={() => {setRadio(key + 1)}}>
               <ThemedText>
                 {item}
               </ThemedText>
@@ -35,7 +35,7 @@ const survey = () => {
           ))
         }
       </View>
-      <ThemedButton bgLightColor={(radio > 0 ? '#0086ff' : '#bbbbbb')} bgDarkColor='#0086ff' route={(radio > 0) ? '/(tabs)' : ''}>
+      <ThemedButton LightColor={(radio > 0 ? '#0086ff' : '#bbbbbb')} DarkColor={(radio > 0 ? '#0086ff' : '#555555')} route={(radio > 0) ? '/(tabs)' : ''}>
         <ThemedText style={tw`text-center`} lightColor='white'>
           Selanjutnya
         </ThemedText>

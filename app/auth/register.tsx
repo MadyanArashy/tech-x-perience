@@ -27,7 +27,7 @@ const register = () => {
                 <TextInput style={tw`border-2 border-neutral-800 rounded-xl bg-[#1a1a1a] pl-4 text-white`} autoComplete='new-password' secureTextEntry placeholder='Masukkan Password' placeholderTextColor={'grey'} selectionColor={'white'}/>
                 <TextInput style={tw`border-2 border-neutral-800 rounded-xl bg-[#1a1a1a] pl-4 text-white`} autoComplete='password' secureTextEntry placeholder='Konfirmasi Password' placeholderTextColor={'grey'} selectionColor={'white'}/>
             </View>
-            <ThemedButton route={'/auth/survey'} bgDarkColor='#0086ff' bgLightColor='#0086ff'>
+            <ThemedButton route={'/auth/survey'} DarkColor='#0086ff' LightColor='#0086ff'>
               <ThemedText style={tw`text-center`}>
                 Masuk
               </ThemedText>
@@ -41,7 +41,7 @@ const register = () => {
                   Atau mau masuk melalui
                 </ThemedText>
               </View>
-              <ThemedButton route={'/auth/survey'} bgLightColor='#151515' bgDarkColor='white'>
+              <ThemedButton route={'/auth/survey'} LightColor='#151515' DarkColor='white'>
                 <View style={tw`ml-18 flex-row gap-4 items-center`}>
                   <Ionicons name='logo-google' size={28} color={iconColor}/>
                   <ThemedText style={tw`text-center`} darkColor='black' lightColor='white'>
@@ -49,7 +49,7 @@ const register = () => {
                   </ThemedText>
                 </View>
               </ThemedButton>
-              <ThemedButton route={'/auth/survey'} bgLightColor='#151515' bgDarkColor='white'>
+              <ThemedButton route={'/auth/survey'} LightColor='#151515' DarkColor='white'>
                 <View style={tw`ml-18 flex-row gap-4 items-center`}>
                   <AntDesign name='facebook-square' size={28} color={iconColor}/>
                   <ThemedText style={tw`text-center`} darkColor='black' lightColor='white'>

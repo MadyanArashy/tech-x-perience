@@ -8,8 +8,8 @@ import { ThemedText } from './ThemedText';
 
 type ThemedButtonProps = {
   route?: any;
-  bgLightColor?: string;
-  bgDarkColor?: string;
+  LightColor?: string;
+  DarkColor?: string;
   style?: StyleProp<ViewStyle>;
   inline?: boolean;
   transparent?: boolean;
@@ -17,9 +17,9 @@ type ThemedButtonProps = {
   onPress?: () => void;
 }
 
-const ThemedButton = ({bgLightColor = 'transparent', bgDarkColor = 'transparent', style, inline, route, transparent, children, onPress}: ThemedButtonProps) => {
+const ThemedButton = ({LightColor = 'transparent', DarkColor = 'transparent', style, inline, route, transparent, children, onPress}: ThemedButtonProps) => {
 
-  const bgColor = useThemeColor({ light: bgLightColor, dark: bgDarkColor }, 'text');
+  const bgColor = useThemeColor({ light: LightColor, dark: DarkColor }, 'text');
   const router = useRouter();
   let buttonContent = route && !onPress ? (
     <TouchableOpacity style={[tw`rounded-xl`]} onPress={() => router.push(route)}>
