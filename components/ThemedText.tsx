@@ -50,20 +50,20 @@ const styles = StyleSheet.create({
   },
   extrasmall: {
     fontSize: 13,
-    lineHeight: 24,
+    lineHeight: 20,
   },
   extrasmallTwo: {
     fontSize: 13,
-    lineHeight: 24,
+    lineHeight: 20,
     color: '#646464',
   },
   ultrasmall: {
-    fontSize: 11,
-    lineHeight: 24,
+    fontSize: 10.5,
+    lineHeight: 16,
   },
   ultrasmallTwo: {
-    fontSize: 11,
-    lineHeight: 24,
+    fontSize: 10.5,
+    lineHeight: 16,
     color: '#646464',
   },
   defaultSemiBold: {

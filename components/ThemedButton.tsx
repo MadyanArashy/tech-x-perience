@@ -15,20 +15,21 @@ type ThemedButtonProps = {
   transparent?: boolean;
   children: ReactNode;
   onPress?: () => void;
+  disabled?: boolean | undefined;
 }
 
-const ThemedButton = ({LightColor = 'transparent', DarkColor = 'transparent', style, inline, route, transparent, children, onPress}: ThemedButtonProps) => {
+const ThemedButton = ({LightColor = 'transparent', DarkColor = 'transparent', style, inline, route, transparent, children, onPress, disabled}: ThemedButtonProps) => {
 
   const bgColor = useThemeColor({ light: LightColor, dark: DarkColor }, 'text');
   const router = useRouter();
   let buttonContent = route && !onPress ? (
-    <TouchableOpacity style={[tw`rounded-xl`]} onPress={() => router.push(route)}>
+    <TouchableOpacity style={[tw`rounded-xl`]} onPress={() => router.push(route)} disabled={disabled}>
       <View style={[tw`rounded-lg py-3 bg-[${transparent ? 'transparent' : bgColor}] ${transparent ? 'border' : ''} border-[${transparent ? bgColor : 'none'}]`, style]}>
         {children}
       </View>
     </TouchableOpacity>
   ) : 
-  <TouchableOpacity style={[tw`rounded-xl`]} onPress={onPress}>
+  <TouchableOpacity style={[tw`rounded-xl`]} onPress={onPress} disabled={disabled}>
     <View style={[tw`rounded-lg py-3 bg-[${transparent ? 'transparent' : bgColor}] ${transparent ? 'border' : ''} border-[${transparent ? bgColor : 'none'}]`, style]}>
       {children}
     </View>

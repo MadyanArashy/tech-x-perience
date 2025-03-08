@@ -28,8 +28,8 @@ export default function TabLayout() {
               position: 'absolute', // For iOS blur effect
             },
           }),
-          height: 80,
-          paddingTop: '5%',
+          height: 70,
+          paddingTop: '3%',
         },
       }}>
       <Tabs.Screen
@@ -40,9 +40,9 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="akademi"
         options={{
-          title: 'Explore',
+          title: 'Akademi',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
         }}
       />
