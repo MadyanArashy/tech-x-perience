@@ -249,12 +249,12 @@ const FilterImages = () => {
         <View style={tw`flex-col gap-5`}>
           <View style={tw`flex-row mr-5 gap-5 justify-between`}>
           {imageData.map((item, key) => ( key % 2 === 0 ?
-            <View key={key} style={tw`w-[${item.width}] h-40 bg-[${colors.textSecondary}] rounded-lg`}/> : ''
+            <View key={key} style={tw`w-[${item.width}] h-40 bg-[${Colors.light.secondary}] rounded-lg`}/> : ''
           ))}
           </View>
           <View style={tw`flex-row mr-5 gap-5 justify-between`}>
           {imageData.map((item, key) => ( key % 2 !== 0 ?
-            <View key={key} style={tw`w-[${item.width}] h-40 bg-[${colors.textSecondary}] rounded-lg`}/> : ''
+            <View key={key} style={tw`w-[${item.width}] h-40 bg-[${Colors.light.secondary}] rounded-lg`}/> : ''
           ))}
           </View>
         </View>

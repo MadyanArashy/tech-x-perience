@@ -52,7 +52,7 @@ export default function HomeScreen() {
   return (
     <ThemedView darkColor='#151515' lightColor='white' style={tw`flex-1 px-4`}>
       <SafeAreaView style={tw`flex-1`}>
-        <ScrollView contentContainerStyle={tw`pt-4`} showsVerticalScrollIndicator={false}>
+        <ScrollView style={tw`pt-4`} showsVerticalScrollIndicator={false}>
         <View style={tw`flex-row justify-between w-full flex-1 items-center`}>
           {logoImage}
           <View style={tw`flex-row gap-3`}>

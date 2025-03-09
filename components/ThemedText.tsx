@@ -1,4 +1,6 @@
 import { Text, type TextProps, StyleSheet } from 'react-native';
+import { useFonts } from 'expo-font';
+import { useEffect } from 'react'
 
 import { useThemeColor } from '@/hooks/useThemeColor';
 
@@ -16,6 +18,8 @@ export function ThemedText({
   ...rest
 }: ThemedTextProps) {
   const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
+
+
 
   return (
     <Text
@@ -40,13 +44,15 @@ export function ThemedText({
 
 const styles = StyleSheet.create({
   default: {
-    fontSize: 15,
+    fontSize: 13,
     lineHeight: 24,
+    fontFamily: 'Poppins-Regular'
   },
   defaultTwo: {
-    fontSize: 15,
+    fontSize: 13,
     lineHeight: 24,
     color: '#646464',
+    fontFamily: 'Poppins-Regular'
   },
   extrasmall: {
     fontSize: 13,
@@ -67,9 +73,10 @@ const styles = StyleSheet.create({
     color: '#646464',
   },
   defaultSemiBold: {
-    fontSize: 15,
+    fontSize: 13,
     lineHeight: 24,
     fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold'
   },
   title: {
     fontSize: 32,
@@ -79,6 +86,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 22,
     fontWeight: 'bold',
+    fontFamily: 'Poppins-Bold'
   },
   link: {
     lineHeight: 30,

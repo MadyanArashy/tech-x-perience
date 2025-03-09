@@ -15,8 +15,8 @@ const index = () => {
   const logoImage = colorScheme === 'dark' ? <Image source={require('../assets/images/techXperience-long.png')} resizeMode='cover' style={tw`h-20 w-full mx-auto`}/> : <Image source={require('../assets/images/techXperience-long-dark.png')} resizeMode='cover' style={tw`h-20 w-full mx-auto`}/>
   return (
     <ThemedView darkColor='#151515' lightColor='white' style={tw`flex-1 px-4`}>
-      <SafeAreaView style={tw`flex-1 flex-grow mx-auto justify-center`}>
-        <ThemedView style={tw`px-4 py-2 flex-row items-center justify-center mx-auto mb-16 rounded-2xl`}>
+      <SafeAreaView style={tw`flex-1 flex-grow mx-auto justify-center pt-20`}>
+        <ThemedView style={tw`px-4 py-2 flex-row items-center justify-center mx-auto mb-8 rounded-2xl`}>
           {logoImage}
         </ThemedView>
         <ThemedText type='subtitle' style={tw`text-center mb-4`}>
@@ -26,7 +26,7 @@ const index = () => {
           Belajar di TechXperience, kamu dapat belajar berbagai bidang teknologi seperti pemrograman, desain grafis, dan jaringan.
         </ThemedText>
       </SafeAreaView>
-      <View style={tw`flex-col bottom-10 gap-2 absolute left-1/15`}>
+      <View style={tw`flex-col bottom-10 gap-2`}>
         <ThemedButton route={'/(tabs)'} LightColor='black' DarkColor='white' transparent>
           <ThemedText style={tw`text-center`}>
             Mulai Belajar Sekarang
