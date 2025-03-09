@@ -44,12 +44,12 @@ export function ThemedText({
 
 const styles = StyleSheet.create({
   default: {
-    fontSize: 13,
+    fontSize: 14,
     lineHeight: 24,
     fontFamily: 'Poppins-Regular'
   },
   defaultTwo: {
-    fontSize: 13,
+    fontSize: 14,
     lineHeight: 24,
     color: '#646464',
     fontFamily: 'Poppins-Regular'
@@ -91,7 +91,6 @@ const styles = StyleSheet.create({
   },
   link: {
     lineHeight: 24,
-    fontSize: 15,
     color: '#0086ff',
   },
 });

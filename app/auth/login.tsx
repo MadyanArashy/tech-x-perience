@@ -72,7 +72,7 @@ const login = () => {
                 <ThemedButton route={'/auth/survey'} LightColor={colors.textSecondary} DarkColor={colors.textSecondary}>
                   <View style={tw`ml-18 flex-row gap-4 items-center`}>
                     <AntDesign name='facebook-square' size={28} color={colors.background}/>
-                    <ThemedText style={tw`text-center`} darkColor={colors.secondary} lightColor={colors.secondary}>
+                    <ThemedText style={tw`text-center`} darkColor={colors.background} lightColor={colors.background}>
                       Masuk Dengan Facebook
                     </ThemedText>
                   </View>

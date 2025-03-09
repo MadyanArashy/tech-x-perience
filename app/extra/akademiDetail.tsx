@@ -30,6 +30,11 @@ export default function akademiDetail() {
             <View style={tw`p-3.5`}/>
           </View>
           <VideoScreen/>
+          <View style={tw`px-4`}>
+            <ThemedText type='defaultSemiBold' style={tw`text-[${colors.tint}] text-xl`}>
+              Mahir Menjadi Frontend
+            </ThemedText>
+          </View>
         </ScrollView>
       </SafeAreaView>
     </ThemedView>

@@ -12,7 +12,10 @@ import { useVideoPlayer, VideoView } from 'expo-video';
 const VideoScreen = () => {
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme ?? 'light'];
-  const assetId = require('@/assets/videos/bbb_sunflower_1080p_30fps_stereo_abl.mp4')
+
+  // Ganti assetId (mp4) dan metadata dengan video yang ingin digunakan.
+  // download video big buck bunny dari https://download.blender.org/demo/movies/BBB/
+  const assetId = require('@/assets/videos/bbb_sunflower_1080p_30fps_normal.mp4')
   const videoSource = {
     assetId,
     metadata: {
@@ -28,39 +31,10 @@ const VideoScreen = () => {
   const { isPlaying } = useEvent(player, 'playingChange', { isPlaying: player.playing });
   
   return (
-    <View style={styles.contentContainer}>
-    <VideoView style={styles.video} player={player} allowsFullscreen allowsPictureInPicture />
-    <View style={styles.controlsContainer}>
-      <Button
-        title={isPlaying ? 'Pause' : 'Play'}
-        onPress={() => {
-          if (isPlaying) {
-            player.pause();
-          } else {
-            player.play();
-          }
-        }}
-      />
+    <View>
+      <VideoView player={player} allowsFullscreen allowsPictureInPicture style={tw`w-full h-70 bg-black`}/>
     </View>
-  </View>
   );
 };
 
 export default VideoScreen;
-
-const styles = StyleSheet.create({
-  contentContainer: {
-    flex: 1,
-    padding: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 50,
-  },
-  video: {
-    width: 350,
-    height: 275,
-  },
-  controlsContainer: {
-    padding: 10,
-  },
-});
