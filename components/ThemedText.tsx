@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: 'bold',
     lineHeight: 32,
+    fontFamily: 'Poppins-Bold'
   },
   subtitle: {
     fontSize: 22,
@@ -89,8 +90,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Bold'
   },
   link: {
-    lineHeight: 30,
+    lineHeight: 24,
     fontSize: 15,
-    color: '#0a7ea4',
+    color: '#0086ff',
   },
 });
