@@ -9,7 +9,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { Colors } from '@/constants/Colors';
 
-export default function akademi() {
+export default function news() {
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme ?? 'light'];
   return (

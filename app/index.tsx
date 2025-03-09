@@ -27,7 +27,7 @@ const index = () => {
         </ThemedText>
       </SafeAreaView>
       <View style={tw`flex-col bottom-10 gap-2 absolute left-1/15`}>
-        <ThemedButton route={'/auth/survey'} LightColor='black' DarkColor='white' transparent>
+        <ThemedButton route={'/(tabs)'} LightColor='black' DarkColor='white' transparent>
           <ThemedText style={tw`text-center`}>
             Mulai Belajar Sekarang
           </ThemedText>

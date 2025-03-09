@@ -17,7 +17,7 @@ type FilterButtonProps = {
 const FilterButton = ({text, onPress, style, selected}: FilterButtonProps) => {
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme ?? 'light'];
-  const selectedStyle = selected ? colors.icon : ''
+  const selectedStyle = selected ? colors.secondary : ''
   return (
     <TouchableOpacity style={tw`px-2 py-1`} onPress={onPress}>
       <View style={[tw`border-2 border-[${colors.icon}] px-3 py-1 rounded-md bg-[${selectedStyle}]`, style]} >

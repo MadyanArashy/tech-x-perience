@@ -45,18 +45,18 @@ const register = () => {
                   Atau mau masuk melalui
                 </ThemedText>
               </View>
-              <ThemedButton route={'/auth/survey'} LightColor={colors.secondary} DarkColor={colors.secondary}>
+              <ThemedButton route={'/auth/survey'} LightColor={colors.textSecondary} DarkColor={colors.textSecondary}>
                 <View style={tw`ml-18 flex-row gap-4 items-center`}>
-                  <Ionicons name='logo-google' size={28} color={colors.text}/>
-                  <ThemedText style={tw`text-center`} darkColor={colors.text} lightColor={colors.default}>
+                  <Ionicons name='logo-google' size={28} color={colors.background}/>
+                  <ThemedText style={tw`text-center`} darkColor={colors.background} lightColor={colors.background}>
                     Masuk Dengan Google
                   </ThemedText>
                 </View>
               </ThemedButton>
-              <ThemedButton route={'/auth/survey'} LightColor={colors.secondary} DarkColor={colors.secondary}>
+              <ThemedButton route={'/auth/survey'} LightColor={colors.textSecondary} DarkColor={colors.textSecondary}>
                 <View style={tw`ml-18 flex-row gap-4 items-center`}>
-                  <AntDesign name='facebook-square' size={28} color={colors.text}/>
-                  <ThemedText style={tw`text-center`} darkColor={colors.text} lightColor={colors.default}>
+                  <AntDesign name='facebook-square' size={28} color={colors.background}/>
+                  <ThemedText style={tw`text-center`} darkColor={colors.secondary} lightColor={colors.secondary}>
                     Masuk Dengan Facebook
                   </ThemedText>
                 </View>

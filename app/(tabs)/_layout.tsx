@@ -7,6 +7,7 @@ import { IconSymbol } from '@/components/ui/IconSymbol';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { Foundation, MaterialIcons, FontAwesome } from '@expo/vector-icons';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -22,7 +23,7 @@ export default function TabLayout() {
         tabBarBackground: () => TabBarBackground,
         tabBarStyle: {
           backgroundColor: colors.background, // Tab bar background color
-          borderTopColor: colorScheme === 'dark' ? '#333' : '#eee', // Optional: Add a border for better visibility
+          borderTopColor: colors.secondary, // Optional: Add a border for better visibility
           ...Platform.select({
             ios: {
               position: 'absolute', // For iOS blur effect
@@ -43,7 +44,28 @@ export default function TabLayout() {
         name="akademi"
         options={{
           title: 'Akademi',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarIcon: ({ color }) => <Foundation size={28} name="book-bookmark" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="reels"
+        options={{
+          title: 'Reels',
+          tabBarIcon: ({ color }) => <MaterialIcons size={28} name="live-tv" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="news"
+        options={{
+          title: 'News',
+          tabBarIcon: ({ color }) => <FontAwesome size={28} name="newspaper-o" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="membership"
+        options={{
+          title: 'Membership',
+          tabBarIcon: ({ color }) => <FontAwesome size={28} name="id-card-o" color={color} />,
         }}
       />
     </Tabs>

@@ -6,17 +6,19 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 import Category from '@/components/Category';
-import Header from '@/components/Header';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
-import { SimpleLineIcons, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { SimpleLineIcons, Ionicons, MaterialCommunityIcons, FontAwesome6, FontAwesome5 } from '@expo/vector-icons';
 import Card from '@/components/Card';
+import Program from '@/components/Program'
 import FilterImages from '@/components/FilterImages';
 
 
 export default function HomeScreen() {
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme ?? 'light'];
+
+  const logoImage =  colorScheme === 'dark' ? <Image source={require('@/assets/images/techXperience-long.png')} style={tw`w-36 h-10`} resizeMethod='resize' resizeMode='contain'/> : <Image source={require('@/assets/images/techXperience-long-dark.png')} style={tw`w-36 h-10`} resizeMethod='resize' resizeMode='contain'/>
 
   const bannerImages = [
     require('@/assets/images/hackathon-ganjar.png'),
@@ -51,7 +53,14 @@ export default function HomeScreen() {
     <ThemedView darkColor='#151515' lightColor='white' style={tw`flex-1 px-4`}>
       <SafeAreaView style={tw`flex-1`}>
         <ScrollView contentContainerStyle={tw`pt-4`} showsVerticalScrollIndicator={false}>
-          <Header />
+        <View style={tw`flex-row justify-between w-full flex-1 items-center`}>
+          {logoImage}
+          <View style={tw`flex-row gap-3`}>
+            <Ionicons name='search' size={24} color={colors.default}/>
+            <Ionicons name='notifications-outline' size={24} color={colors.default}/>
+            <Ionicons name='person-circle-outline' size={24} color={colors.default}/>
+          </View>
+        </View>
 
           <ScrollView
             horizontal
@@ -89,12 +98,33 @@ export default function HomeScreen() {
             </View>
           </View>
 
-          <View style={tw`mb-5`}>
+          <View style={tw`mb-8`}>
             <View style={tw`flex-row justify-between mb-1`}>
               <ThemedText type='defaultSemiBold'>🗓️ Ikuti event terdekat</ThemedText>
               <ThemedText>Lihat semua</ThemedText>
             </View>
             <FilterImages/>
+          </View>
+
+          <View style={tw`mb-8`}>
+            <View style={tw`flex-row justify-between mb-1`}>
+              <ThemedText type='defaultSemiBold'>🗓️ Program Techxperience</ThemedText>
+              <ThemedText>Lihat semua</ThemedText>
+            </View>
+            <View style={tw`flex-row justify-between`}>
+              <Program
+              title='TechXPerience Career'
+              icon={<MaterialCommunityIcons name='hand-coin-outline' size={28} color={colors.textSecondary}/>}/>
+              <Program
+              title='Pengembangan Usaha'
+              icon={<FontAwesome6 name='building-circle-arrow-right' size={26} color={colors.textSecondary}/>}/>
+              <Program
+              title='TechXPerience Career'
+              icon={<FontAwesome6 name='sack-dollar' size={26} color={colors.textSecondary}/>}/>
+              <Program
+              title='TechXPerience Career'
+              icon={<FontAwesome5 name='money-check-alt' size={28} color={colors.textSecondary}/>}/>
+            </View>
           </View>
               
         </ScrollView>

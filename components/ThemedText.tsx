@@ -58,11 +58,11 @@ const styles = StyleSheet.create({
     color: '#646464',
   },
   ultrasmall: {
-    fontSize: 10.5,
+    fontSize: 9,
     lineHeight: 16,
   },
   ultrasmallTwo: {
-    fontSize: 10.5,
+    fontSize: 9,
     lineHeight: 16,
     color: '#646464',
   },
