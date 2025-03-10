@@ -81,7 +81,7 @@ export default function membership() {
         <View style={tw`mb-5 flex-col gap-3`}>
           {packageData.map((item, key) => (
             <TouchableOpacity key={key} onPress={() => { setMembership(key+1) }}>
-              <ThemedView style={tw`flex-row w-full justify-between items-end bg-[${Colors.light.background}] px-4 py-2 rounded-xl ${membership === (key+1) ? 'border-2' : ''} border-[${membership === (key+1) ? colors.tint : ''}]`}>
+              <ThemedView style={tw`flex-row w-full justify-between items-end bg-[${Colors.light.background}] px-4 py-2 rounded-xl ${membership === (key+1) ? 'border-2' : ''} ${membership === (key+1) ? 'border-' : ''}[${membership === (key+1) ? colors.tint : ''}]`}>
                 <View style={tw`flex-col`}>
                   <ThemedText type='defaultSemiBold' darkColor='black'>{item.length}</ThemedText>
                   <ThemedText type='default' darkColor='black'>{item.price}</ThemedText>
