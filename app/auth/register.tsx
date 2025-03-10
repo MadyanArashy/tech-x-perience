@@ -32,7 +32,7 @@ const register = () => {
                 <TextInput style={tw`border-2 border-[${colors.secondary}] rounded-xl bg-[${colors.background}] pl-4 text-[${colors.text}] py-2`} autoComplete='password' secureTextEntry placeholder='Konfirmasi Password' placeholderTextColor={colors.icon} selectionColor={colors.default}/>
             </View>
             <ThemedButton route={'/auth/survey'} DarkColor='#0086ff' LightColor='#0086ff'>
-              <ThemedText style={tw`text-center`}>
+              <ThemedText style={tw`text-center`} lightColor='white'>
                 Masuk
               </ThemedText>
             </ThemedButton>

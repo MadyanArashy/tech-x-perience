@@ -1,38 +1,48 @@
-import React from 'react';
-import { Text, View, Image, TouchableOpacity, Button, StyleSheet } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Text, View } from 'react-native';
 import tw from 'twrnc';
-
-import { ThemedView } from '@/components/ThemedView';
-import { ThemedText } from '@/components/ThemedText';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { Colors } from '@/constants/Colors';
-import { useEvent } from 'expo';
-import { useVideoPlayer, VideoView } from 'expo-video';
+import { useVideoPlayer, VideoView, VideoSource } from 'expo-video';
 
-const VideoScreen = () => {
+type videoProps = {
+  height?: number | 'full'
+}
+
+// Loading asset video dan player untuk video
+// Untuk video big buck bunny download dari https://download.blender.org/peach/bigbuckbunny_movies/
+// Atau pakai versi external URL dengan http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4
+export const bigBuckBunny: VideoSource =
+'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
+
+export const elephantsDream: VideoSource =
+'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4';
+
+const VideoScreen = ({height}: videoProps) => {
+  const [playerReady, setPlayerReady] = useState(false);
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme ?? 'light'];
+  if(!height){height = 70}
 
-  // Ganti assetId (mp4) dan metadata dengan video yang ingin digunakan.
-  // download video big buck bunny dari https://download.blender.org/demo/movies/BBB/
-  const assetId = require('@/assets/videos/bbb_sunflower_1080p_30fps_normal.mp4')
-  const videoSource = {
-    assetId,
-    metadata: {
-      title: 'Big Buck Bunny'
-    }
-  }
-
-  const player = useVideoPlayer(videoSource.assetId, player => {
+  const player1 = useVideoPlayer(bigBuckBunny, (player) => {
     player.loop = true;
-    player.play();
+    setPlayerReady(true); // Jika player video telah selesai, set state dari playerReady menjadi true
   });
 
-  const { isPlaying } = useEvent(player, 'playingChange', { isPlaying: player.playing });
-  
+  // Jika playerReady false, akan return teks "Loading video..."
+  // Jika playerReady true, akan return VideoView dengan player yang telah ditentukan
   return (
     <View>
-      <VideoView player={player} allowsFullscreen allowsPictureInPicture style={tw`w-full h-70 bg-black`}/>
+      {!playerReady ? (
+        <Text>Loading Video...</Text>
+      ) : (
+        <VideoView
+          player={player1}
+          allowsFullscreen
+          allowsPictureInPicture
+          style={tw`w-full h-${height} bg-black`}
+        />
+      )}
     </View>
   );
 };

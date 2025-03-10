@@ -57,23 +57,27 @@ const styles = StyleSheet.create({
   extrasmall: {
     fontSize: 13,
     lineHeight: 20,
+    fontFamily: 'Poppins-Regular'
   },
   extrasmallTwo: {
     fontSize: 13,
     lineHeight: 20,
     color: '#646464',
+    fontFamily: 'Poppins-Regular'
   },
   ultrasmall: {
     fontSize: 9,
     lineHeight: 16,
+    fontFamily: 'Poppins-Light'
   },
   ultrasmallTwo: {
     fontSize: 9,
     lineHeight: 16,
     color: '#646464',
+    fontFamily: 'Poppins-Light'
   },
   defaultSemiBold: {
-    fontSize: 13,
+    fontSize: 14,
     lineHeight: 24,
     fontWeight: '600',
     fontFamily: 'Poppins-SemiBold'
@@ -85,7 +89,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Bold'
   },
   subtitle: {
-    fontSize: 22,
+    fontSize: 21,
     fontWeight: 'bold',
     fontFamily: 'Poppins-Bold'
   },

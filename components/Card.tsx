@@ -21,7 +21,7 @@ const Card = ({image, title, desc}: cardProps) => {
   const router = useRouter();
   return (
     <TouchableOpacity onPress={() => {router.push("/extra/akademiDetail")}}>
-      <ThemedView style={tw`w-43 flex-col rounded-lg mb-3`} lightColor={colors.secondary} darkColor={colors.secondary}>
+      <ThemedView style={tw`w-43 flex-col rounded-lg mb-3]`} lightColor={colors.secondary} darkColor={colors.secondary}>
         <Image source={image} style={tw`w-full h-30 rounded-t-lg mb-3 border-[${colors.secondary}]`}/>
         <View style={tw`px-1.5 pb-3 flex-col justify-between flex-1 rounded-b-lg`}>
           <View style={tw`flex-col gap-1.5`}>

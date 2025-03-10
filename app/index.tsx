@@ -33,7 +33,7 @@ const index = () => {
           </ThemedText>
         </ThemedButton>
         <ThemedButton route={'/auth/login'} LightColor='#4285f4' DarkColor='#4285f4'>
-          <ThemedText style={tw`text-center`}>
+          <ThemedText style={tw`text-center`} lightColor='white'>
             Masuk
           </ThemedText>
         </ThemedButton>

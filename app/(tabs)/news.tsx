@@ -29,6 +29,16 @@ export default function news() {
       'date': '23 Februari 2025',
       'imageSource': require('@/assets/images/indian-speaker.png')
     },
+    {
+      'title': 'India sebar developernya keseluruh dunia, dengan bayaran murah',
+      'date': '23 Februari 2025',
+      'imageSource': require('@/assets/images/indian-speaker.png')
+    },
+    {
+      'title': 'India sebar developernya keseluruh dunia, dengan bayaran murah',
+      'date': '23 Februari 2025',
+      'imageSource': require('@/assets/images/indian-speaker.png')
+    },
   ]
   return (
     <ThemedView darkColor='#151515' lightColor='white' style={tw`flex-1 px-4`}>
@@ -56,7 +66,18 @@ export default function news() {
                 </View>
               ))}
           </ScrollView>
-
+            
+          <View style={tw`flex-col gap-3`}>
+            {bannerImages.map((item, key) => (
+            <View key={key} style={tw`flex-row justify-between gap-4 items-center h-24`}>
+              <Image source={item.imageSource} style={tw`w-24 h-24`}/>
+              <View style={tw`w-full h-full flex-col justify-between flex-1`}>
+                <ThemedText type='link' style={tw``}>{item.title}</ThemedText>
+                <ThemedText type='extrasmall'>{item.date}</ThemedText>
+              </View>
+            </View>
+            ))}
+          </View>
         </ScrollView>
       </SafeAreaView>
     </ThemedView>

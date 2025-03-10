@@ -8,17 +8,16 @@ import { ThemedText } from '@/components/ThemedText';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { Colors } from '@/constants/Colors';
+import VideoScreen from '@/components/VideoScreen';
 
 export default function reels() {
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme ?? 'light'];
   return (
-    <ThemedView darkColor='#151515' lightColor='white' style={tw`flex-1 px-4`}>
-      <SafeAreaView style={tw`flex-1 flex-grow mx-auto justify-center`}>
-        <ScrollView>
-        
-        </ScrollView>
-      </SafeAreaView>
+    <ThemedView darkColor='red' lightColor='white' style={tw`flex-1`}>
+      <View style={tw`w-full flex-1 bg-blue-500 pt-20`}>
+        <VideoScreen height={'full'}/>
+      </View>
     </ThemedView>
   );
 };
