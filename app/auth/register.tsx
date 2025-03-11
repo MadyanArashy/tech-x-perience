@@ -26,13 +26,13 @@ const register = () => {
             {logoImage}
           </ThemedView>
             <View style={tw`flex-col gap-4 mb-4`}>
-                <TextInput style={tw`border-2 border-[${colors.secondary}] rounded-xl bg-[${colors.background}] pl-4 text-[${colors.text}]`} autoComplete='name' placeholder='Masukkan Nama Lengkap' placeholderTextColor={colors.icon} selectionColor={colors.default}/>
-                <TextInput style={tw`border-2 border-[${colors.secondary}] rounded-xl bg-[${colors.background}] pl-4 text-[${colors.text}]`} autoComplete='email' placeholder='Masukkan Email' placeholderTextColor={colors.icon} selectionColor={colors.default}/>
-                <TextInput style={tw`border-2 border-[${colors.secondary}] rounded-xl bg-[${colors.background}] pl-4 text-[${colors.text}]`} autoComplete='new-password' secureTextEntry placeholder='Masukkan Password' placeholderTextColor={colors.icon} selectionColor={colors.default}/>
-                <TextInput style={tw`border-2 border-[${colors.secondary}] rounded-xl bg-[${colors.background}] pl-4 text-[${colors.text}]`} autoComplete='password' secureTextEntry placeholder='Konfirmasi Password' placeholderTextColor={colors.icon} selectionColor={colors.default}/>
+                <TextInput style={tw`border-2 border-[${colors.secondary}] rounded-xl bg-[${colors.background}] pl-4 text-[${colors.text}] py-2`} autoComplete='name' placeholder='Masukkan Nama Lengkap' placeholderTextColor={colors.icon} selectionColor={colors.default}/>
+                <TextInput style={tw`border-2 border-[${colors.secondary}] rounded-xl bg-[${colors.background}] pl-4 text-[${colors.text}] py-2`} autoComplete='email' placeholder='Masukkan Email' placeholderTextColor={colors.icon} selectionColor={colors.default}/>
+                <TextInput style={tw`border-2 border-[${colors.secondary}] rounded-xl bg-[${colors.background}] pl-4 text-[${colors.text}] py-2`} autoComplete='new-password' secureTextEntry placeholder='Masukkan Password' placeholderTextColor={colors.icon} selectionColor={colors.default}/>
+                <TextInput style={tw`border-2 border-[${colors.secondary}] rounded-xl bg-[${colors.background}] pl-4 text-[${colors.text}] py-2`} autoComplete='password' secureTextEntry placeholder='Konfirmasi Password' placeholderTextColor={colors.icon} selectionColor={colors.default}/>
             </View>
             <ThemedButton route={'/auth/survey'} DarkColor='#0086ff' LightColor='#0086ff'>
-              <ThemedText style={tw`text-center`}>
+              <ThemedText style={tw`text-center`} lightColor='white'>
                 Masuk
               </ThemedText>
             </ThemedButton>

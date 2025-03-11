@@ -10,7 +10,7 @@ export const Colors = {
   light: {
     default: '#000',
     secondary: '#d9d9d9',
-    textSecondary: '#292929',
+    textSecondary: '#2a2a2a',
     text: '#11181C',
     background: '#fff',
     tint: tintColorLight,
@@ -20,7 +20,7 @@ export const Colors = {
   },
   dark: {
     default: '#fff',
-    secondary: '#292929',
+    secondary: '#2a2a2a',
     textSecondary: '#d9d9d9',
     text: '#ECEDEE',
     background: '#151718',

@@ -28,8 +28,8 @@ const login = () => {
               {logoImage}
             </ThemedView>
               <View style={tw`flex-col gap-4 mb-4`}>
-              <TextInput style={tw`border-2 border-[${colors.secondary}] rounded-xl bg-[${colors.background}] pl-4 text-[${colors.text}]`} autoComplete='email' placeholder='Masukkan Email' placeholderTextColor={colors.icon} selectionColor={colors.default}/>
-              <TextInput style={tw`border-2 border-[${colors.secondary}] rounded-xl bg-[${colors.background}] pl-4 text-[${colors.text}]`} autoComplete='current-password' secureTextEntry placeholder='Masukkan Password' placeholderTextColor={colors.icon} selectionColor={colors.default}/>
+              <TextInput style={tw`border-2 border-[${colors.secondary}] rounded-xl bg-[${colors.background}] pl-4 text-[${colors.text}] py-2`} autoComplete='email' placeholder='Masukkan Email' placeholderTextColor={colors.icon} selectionColor={colors.default}/>
+              <TextInput style={tw`border-2 border-[${colors.secondary}] rounded-xl bg-[${colors.background}] pl-4 text-[${colors.text}] py-2`} autoComplete='current-password' secureTextEntry placeholder='Masukkan Password' placeholderTextColor={colors.icon} selectionColor={colors.default}/>
               </View>
               <View style={tw`flex-row items-center justify-between mb-6`}>
                 <View style={tw`flex-row items-center gap-2`}>
@@ -48,7 +48,7 @@ const login = () => {
                 </ThemedText>
               </View>
               <ThemedButton route={'/auth/survey'} DarkColor='#0086ff' LightColor='#0086ff'>
-                <ThemedText style={tw`text-center`}>
+                <ThemedText style={tw`text-center`} lightColor='white'>
                   Masuk
                 </ThemedText>
               </ThemedButton>
@@ -72,7 +72,7 @@ const login = () => {
                 <ThemedButton route={'/auth/survey'} LightColor={colors.textSecondary} DarkColor={colors.textSecondary}>
                   <View style={tw`ml-18 flex-row gap-4 items-center`}>
                     <AntDesign name='facebook-square' size={28} color={colors.background}/>
-                    <ThemedText style={tw`text-center`} darkColor={colors.secondary} lightColor={colors.secondary}>
+                    <ThemedText style={tw`text-center`} darkColor={colors.background} lightColor={colors.background}>
                       Masuk Dengan Facebook
                     </ThemedText>
                   </View>

@@ -64,6 +64,7 @@ export default function HomeScreen() {
 
           <ScrollView
             horizontal
+            showsHorizontalScrollIndicator={false}
             style={tw`w-full my-3`}
             contentContainerStyle={tw`flex-row gap-5`}>
               {bannerImages.map((item, key) => (
