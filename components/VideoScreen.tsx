@@ -4,47 +4,72 @@ import tw from 'twrnc';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { Colors } from '@/constants/Colors';
 import { useVideoPlayer, VideoView, VideoSource } from 'expo-video';
+import { useFocusEffect } from '@react-navigation/native';
 
 type videoProps = {
-  height?: number | 'full'
+  video: VideoSource,
+  height?: number | 'full',
+  isPlaying?: boolean,
+  contentFit?: 'contain' | 'cover' | 'fill',
+  onPlayerReady?: (playerInstance: any) => void, // Add a callback to pass the player instance
 }
 
-// Loading asset video dan player untuk video
-// Untuk video big buck bunny download dari https://download.blender.org/peach/bigbuckbunny_movies/
-// Atau pakai versi external URL dengan http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4
-export const bigBuckBunny: VideoSource =
-'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
-
-export const elephantsDream: VideoSource =
-'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4';
-
-const VideoScreen = ({height}: videoProps) => {
+const VideoScreen = ({height = 250, video, contentFit = 'contain', isPlaying = false, onPlayerReady, ...otherProps}: videoProps) => {
+  const [playerState, setPlayerState] = useState(isPlaying)
   const [playerReady, setPlayerReady] = useState(false);
+  const [controls, setControls] = useState(false);
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme ?? 'light'];
-  if(!height){height = 70}
 
-  const player1 = useVideoPlayer(bigBuckBunny, (player) => {
+  const player = useVideoPlayer(video, (player) => {
     player.loop = true;
-    setPlayerReady(true); // Jika player video telah selesai, set state dari playerReady menjadi true
+    setPlayerReady(true);
+    if (onPlayerReady) {
+      onPlayerReady(player); // Pass the player instance back to the parent
+    }
   });
+  
+  // // Pause the video when the tab loses focus
+  // useFocusEffect(
+  //   React.useCallback(() => {
+  //     // When the tab gains focus, play the video
+  //     player.play();
+  //     setPlayerState(true);
+  //     if(isPlaying){
+  //     return () => {
+  //       // When the tab loses focus, pause the video
+  //       player.pause();
+  //       setPlayerState(false);
+  //     }};
+  //   }, [player])
+  // );
 
-  // Jika playerReady false, akan return teks "Loading video..."
-  // Jika playerReady true, akan return VideoView dengan player yang telah ditentukan
+
+  useEffect(() => {
+    if (isPlaying) {
+      setControls(false);
+      player.play(); // Play the video when it's visible
+      setTimeout(() => setControls(true), 10);
+    } else {
+      player.seekBy(-player.currentTime)
+      player.pause()
+    }
+  }, [isPlaying, player]);
+  
+  if(playerReady) {
   return (
-    <View>
-      {!playerReady ? (
-        <Text>Loading Video...</Text>
-      ) : (
-        <VideoView
-          player={player1}
-          allowsFullscreen
-          allowsPictureInPicture
-          style={tw`w-full h-${height} bg-black`}
-        />
-      )}
+    <View style={[tw`pt-10 pb-30 bg-black`, height === 'full' ? tw`h-full` : {height: height }]}>
+      <VideoView
+        player={player}
+        nativeControls={controls}
+        allowsFullscreen
+        allowsPictureInPicture
+        contentFit={contentFit}
+        style={[tw`w-full bg-black`, height === 'full' ? tw`h-full` : {height: height }]}
+        {...otherProps}
+      />
     </View>
-  );
+  )};
 };
 
 export default VideoScreen;
