@@ -48,7 +48,7 @@ export default function akademiDetail() {
             </ThemedText>
             <View style={tw`p-3.5`}/>
           </View>
-          <VideoScreen/>
+          <VideoScreen video={'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4'} isPlaying/>
           <View style={tw`px-4 flex-col gap-3`}>
             <ThemedText type='defaultSemiBold' style={tw`text-[${colors.tint}] text-xl mt-3`}>
               Mahir Menjadi Frontend Dev
